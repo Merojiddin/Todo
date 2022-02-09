@@ -1,29 +1,29 @@
 {
   "todos": [
     {
-      "id": 1,
-      "body": "some comment",
-      "compleate": false
+      "text": "Normal task",
+      "completed": false,
+      "id": 4
     },
     {
-      "id": 2,
-      "body": "some comment",
-      "compleate": false
+      "text": "Tab bar change",
+      "completed": false,
+      "id": 5
     },
     {
-      "id": 3,
-      "body": "some comment",
-      "compleate": false
+      "text": "Yahooooo",
+      "completed": true,
+      "id": 6
     },
     {
-      "id": 4,
-      "body": "some comment",
-      "compleate": false
+      "text": "Sirojiddin",
+      "completed": true,
+      "id": 7
     },
     {
-      "id": 5,
-      "body": "some comment",
-      "compleate": false
+      "text": "Merojddin",
+      "completed": true,
+      "id": 8
     }
   ]
 }
