@@ -12,18 +12,13 @@
     },
     {
       "text": "Yahooooo",
-      "completed": true,
+      "completed": false,
       "id": 6
     },
     {
-      "text": "Sirojiddin",
-      "completed": true,
+      "text": "Something Edited",
+      "completed": false,
       "id": 7
-    },
-    {
-      "text": "Merojddin",
-      "completed": true,
-      "id": 8
     }
   ]
 }

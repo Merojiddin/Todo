@@ -13,7 +13,6 @@ function TodoList() {
   const [todoInput, setTodoInput] = useState('');
   const [EditToggle, setEditToggle] = useState(false);
   const [editorId, setEditorId] = useState('')
-  const [filter, setFilter] = useState([])
 
   const addBtnHandler = (input) => {
     input !== '' ? dispatch(postData(input)) : console.log("It`s empty")

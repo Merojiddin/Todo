@@ -16,7 +16,7 @@ function InputList({ editorId, setEditToggle }) {
   }
   useEffect(() => {
     dispatch(fetchData())
-  }, [])
+  }, [dispatch])
 
   return (
     <div>
