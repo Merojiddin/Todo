@@ -1,19 +1,29 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+  "todos": [
     {
       "id": 1,
       "body": "some comment",
-      "postId": 1
+      "compleate": false
+    },
+    {
+      "id": 2,
+      "body": "some comment",
+      "compleate": false
+    },
+    {
+      "id": 3,
+      "body": "some comment",
+      "compleate": false
+    },
+    {
+      "id": 4,
+      "body": "some comment",
+      "compleate": false
+    },
+    {
+      "id": 5,
+      "body": "some comment",
+      "compleate": false
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
