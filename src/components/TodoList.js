@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { editData, deleteData, fetchData, postData } from '../redux/actions/requests';
 import InputList from './InputList';
@@ -10,9 +10,11 @@ function TodoList() {
   const todos = useSelector(store => store.reducer)
   const dispatch = useDispatch()
 
-  const [todoInput, setTodoInput] = useState('');
   const [EditToggle, setEditToggle] = useState(false);
   const [editorId, setEditorId] = useState('')
+  //const [todoInput, setTodoInput] = useState('');
+  const myContainer = useRef(null);
+
 
   const addBtnHandler = (input) => {
     input !== '' ? dispatch(postData(input)) : console.log("It`s empty")
@@ -42,12 +44,12 @@ function TodoList() {
 
   const TodoListComponent = () => (
     <div>
-      <form className="d-flex justify-content-center align-items-center mb-4">
+      <div className="d-flex justify-content-center align-items-center mb-4">
         <div className="form-outline flex-fill">
-          <input type="text" id="form2" className="form-control" placeholder='Enter a Task...' onChange={e => setTodoInput(e.target.value)} />
+          <input type="text" id="form2" className="form-control" placeholder='Edit a Task...' ref={myContainer} />
         </div>
-        <button type="submit" className="btn btn-info ms-2" onClick={() => addBtnHandler(todoInput)}>Add</button>
-      </form>
+        <button type="submit" className="btn btn-info ms-2" onClick={() => addBtnHandler(myContainer.current.value)}>Add</button>
+      </div>
 
       <div className='buttons d-flex justify-content-center mb-3 pb-3'>
         {/* <button className='btn btn-outline-dark me-2' onClick={() => setFilter(todos.items)}>All</button>
@@ -70,7 +72,7 @@ function TodoList() {
               </li>)
               : (
                 <li className="list-group-item d-flex align-items-center border-0 mb-2 rounded justify-content-between" style={{ backgroundColor: '#f4f6f7' }} key={todo.id}>
-                  <div onClick={e => onCompleateHandler(todo.id, todo.text, todo.completed)} style={{ cursor: 'pointer' }} >
+                  <div onClick={() => onCompleateHandler(todo.id, todo.text, todo.completed)} style={{ cursor: 'pointer' }} >
                     {todo.text}
                   </div>
                   <div>
@@ -78,9 +80,7 @@ function TodoList() {
                     <button className='btn me-1' onClick={() => delBtnHandler(todo.id)}><i className="fa fa-trash me-1"></i>Del</button>
                   </div>
                 </li>)
-
           ))}
-
         </ul>
       </div>
     </div>
@@ -96,7 +96,6 @@ function TodoList() {
             <div className="card-body p-5" style={{ backgroundColor: 'grey' }}>
 
               {EditToggle ? <InputList editorId={editorId} setEditToggle={setEditToggle} /> : <TodoListComponent />}
-
             </div>
           </div>
         </div>

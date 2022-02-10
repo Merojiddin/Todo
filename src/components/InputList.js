@@ -10,9 +10,15 @@ function InputList({ editorId, setEditToggle }) {
   const [text, setText] = useState('');
 
   const EditBtnHandler = (id, text) => {
-    dispatch(editData(id, text))
-    setEditToggle(false)
-    dispatch(fetchData())
+    if (text === '') {
+      alert("Edited text can`t be empty")
+      return
+    } else {
+      dispatch(editData(id, text))
+      setEditToggle(false)
+      dispatch(fetchData())
+    }
+    return
   }
   useEffect(() => {
     dispatch(fetchData())

@@ -18,12 +18,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "go": "react-scripts start ",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "json-server --watch db.json --port 3001",
-    "start": "concurrently \"yarn go\" \"yarn server\""
+    "go": "concurrently \"yarn start\" \"yarn server\""
   },
   "eslintConfig": {
     "extends": [
